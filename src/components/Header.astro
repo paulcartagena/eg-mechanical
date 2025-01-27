@@ -1,0 +1,49 @@
+---
+import HamburguerMenu from "./HamburguerMenu.jsx";
+---
+
+<header
+  class="fixed bg-black/10 top-0 left-0 flex w-full items-center py-8 px-4 md:px-10 z-50"
+>
+  <div class="flex items-center mx-6 absolute">
+    <a href="/">
+      <img src="/images/favicon-logo.ico" alt="Logo" class="w-12"/>
+    </a>
+  </div>
+  <!-- Custom Design Layer-->
+  <div class="absolute inset-0 bg-black/10 z-[-1] blur-layer"></div>
+
+  <!-- Menu for md -->
+  <nav id="menu" class="hidden md:flex flex-row gap-16 text-gray-300 mx-auto">
+    <a href="/" class="text-center hover:text-white">Home</a>
+    <a href="/about" class="text-center hover:text-white">About</a>
+    <a href="/projects" class="text-center hover:text-white">Projects</a>
+    <a href="/#services" class="text-center hover:text-white">Services</a>
+    <a href="/#contact" class="text-center hover:text-white">Contact</a>
+  </nav>
+
+  <!-- Hamburguer Menu -->
+  <div class="ml-auto hidden show-on-small z-60 mx-4">
+    <HamburguerMenu client:load />
+  </div>
+</header>
+
+<style>
+  /* Blur layer */
+  .blur-layer {
+    backdrop-filter: blur(10px); /* Blur effect */
+    pointer-events: none; /* Does not block interaction */
+  }
+
+  /* Show Hamburger Menu only on small screens */
+  @media (max-width: 768px) {
+    .show-on-small {
+      display: block;
+    }
+  }
+
+  /* Hide blur layer when the menu is open */
+  .menu-opened .blur-layer {
+    display: none;
+  }
+</style>

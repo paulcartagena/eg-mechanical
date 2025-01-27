@@ -1,0 +1,106 @@
+<section id="services" class="flex items-center">
+  <div class="container flex flex-col gap-5 mx-auto">
+    <div class="flex flex-col md:flex-row gap-6 items-stretch">
+      <!--Image -->
+      <div class="flex-1 md:flex md:items-center md:justify-center">
+        <img
+          src="/images/bg-form-2.jpeg"
+          alt="Descripción de la imagen"
+          class="w-full h-auto md:h-full object-cover object-center rounded-lg"
+        />
+      </div>
+
+      <!--Form -->
+      <div class="flex-1">
+        <div class="flex-1">
+          <form
+            id="contact"
+            class="flex flex-col justify-center space-y-4"
+            action="https://formsubmit.co/2c1f0349942c6435da12405a7008a19f"
+            method="POST"
+          >
+            <!--Name -->
+            <div>
+              <label
+                for="first-name"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >First Name</label
+              >
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <!--Lastname -->
+            <div>
+              <label
+                for="last-name"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <!--Phone -->
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <!--Message -->
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                required></textarea>
+            </div>
+
+            <!--Send Button -->
+            <div class="text-base text-start pt-2">
+              <button
+                type="submit"
+                class="border border-black bg-blue-600 font-semibold md:font-bold text-white rounded-lg px-11 py-3 md:px-16 md:py-4 hover:bg-blue-700 transition duration-300 w-full mx-auto"
+              >
+                Send Message
+              </button>
+            </div>
+
+            <input
+              type="hidden"
+              name="_next"
+              value="https://capable-snickerdoodle-dd195d.netlify.app/"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

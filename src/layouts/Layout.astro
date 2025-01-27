@@ -1,0 +1,65 @@
+---
+import "@fontsource-variable/onest";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Icons -->
+    <link rel="icon" type="" href="/images/favicon-logo.ico" />
+
+    <!--Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>Eg Mechanical</title>
+  </head>
+  <body
+    class="overflow-x-hidden min-h-screen flex flex-col items-center justify-center relative"
+  >
+    <!-- Background -->
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] min-w-[768px]:hidden"
+    >
+    </div>
+
+    <!-- Main Content -->
+    <main class="w-full md:max-w-[1200px] md:px-4 flex flex-col">
+      <div>
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    color-scheme: light dark;
+    hover: #fcfbfc;
+  }
+
+  html {
+    overflow-x: hidden;
+    font-family: "Rubik", system-ui, sans-serif;
+  }
+
+  body {
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    width: 100%;
+    margin: 0 auto;
+  }
+</style>

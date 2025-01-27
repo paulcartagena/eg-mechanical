@@ -1,0 +1,68 @@
+---
+import Form from "../components/Form.astro";
+---
+
+<section id="contact" class="background-container flex pt-28">
+  <div class="container flex flex-col gap-5 mx-auto px-8 relative">
+    <h2 class="text-4xl md:text-5xl font-bold text-center md:text-left">
+      Contact Us
+    </h2>
+    <p class="text-base text-center w-full md:w-1/2 md:text-left opacity-80">
+      Contact us for more information or support.
+    </p>
+
+    <div class="mt-10 sm:mt-4">
+      <Form />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Background container */
+  .background-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+  }
+
+  /* Gradient layers */
+  .background-container::before,
+  .background-container::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 70%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      rgba(106, 90, 205, 0.6),
+      transparent 50%
+    );
+    filter: blur(100px);
+    transform: translate(-50%, -50%) scale(1);
+    animation: moveGradient 6s infinite alternate ease-in-out;
+    z-index: -1; /* behind the content */
+  }
+
+  /* Second gradient layer with green */
+  .background-container::after {
+    background: radial-gradient(
+      circle,
+      rgba(40, 180, 99, 0.6),
+      transparent 40%
+    );
+    animation-delay: 3s; /* Aniamation delay to alternate effects */
+  }
+
+  /* Gradient animation */
+  @keyframes moveGradient {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(calc(-50% + 60px), calc(-50% - 60px)) scale(1.5);
+    }
+  }
+</style>

@@ -1,0 +1,118 @@
+---
+import ServiceCard from "../components/ServiceCard.astro";
+---
+
+<section id="services" class="background-container flex justify-center pt-28">
+  <div class="container flex flex-col gap-5 mx-auto px-8">
+    <h2
+      class="text-4xl md:text-5xl font-bold text-center md:text-left z-index-1"
+    >
+      Our Services
+    </h2>
+    <p
+      class="text-base text-center w-full md:w-1/2 md:text-left md:text-balance opacity-80 z-index-1"
+    >
+      Expert HVAC services tailored to keep your space comfortable <br
+        class="lg:hidden md:hidden"
+      /> and efficient, every season.
+    </p>
+
+    <div class="grid mt-10 sm:mt-8 grid-cols-1 md:grid-cols-2 gap-6">
+      <ServiceCard
+        icon="/icons/hvac.svg"
+        title="HVAC Services"
+        content="Expert solutions to keep your home comfortable year-round, with reliable and efficient climate control."
+        background="bg-black"
+        gradient="bg-gradient-to-br from-blue-600 to-green-400"
+        pills={[
+          "Boilers",
+          "Heat Pumps",
+          "Split Systems",
+          "Ductless",
+          "Air Conditioning",
+          "Gas Furnace",
+          "& More",
+        ]}
+      />
+      <ServiceCard
+        icon="/icons/plumbing-services.svg"
+        title="Plumbing Services"
+        content="Comprehensive plumbing solutions to ensure smooth and efficient water flow in your home."
+        background="bg-black"
+        gradient="bg-gradient-to-br from-red-800 to-pink-400"
+        pills={[
+          "Water Heaters",
+          "Drain Clearing",
+          "Leak Repair",
+          "Fixture Replacement",
+          "& More",
+        ]}
+      />
+      <ServiceCard
+        icon="/icons/diagnostics.svg"
+        title="Diagnostics"
+        content="Quickly pinpoint and resolve issues with cutting-edge diagnostic tools for your systems."
+        background="bg-black"
+        gradient="bg-gradient-to-r from-purple-600 to-pink-400"
+      />
+      <ServiceCard
+        icon="/icons/build.svg"
+        title="Installations"
+        content="Professional installations designed to deliver peak performance and long-lasting reliability."
+        background="bg-black"
+        gradient="bg-gradient-to-br from-orange-600 to-yellow-400"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Background container */
+  .background-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0000;
+    overflow: hidden; /* Hide overflow from animations */
+  }
+
+  /* Gradient layers */
+  .background-container::before,
+  .background-container::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 69, 142, 0.6),
+      transparent 40%
+    );
+    filter: blur(100px);
+    transform: translate(-50%, -50%) scale(1);
+    animation: moveGradient 6s infinite alternate ease-in-out;
+    z-index: 0;
+  }
+
+  /* Second gradient layer */
+  .background-container::after {
+    background: radial-gradient(
+      circle,
+      rgba(69, 142, 255, 0.6),
+      transparent 40%
+    );
+    animation-delay: 3s;
+  }
+
+  /* Gradient animation */
+  @keyframes moveGradient {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(calc(-50% + 50px), calc(-50% - 50px)) scale(1.5);
+    }
+  }
+</style>
