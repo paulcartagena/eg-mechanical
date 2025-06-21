@@ -1,5 +1,14 @@
 ---
 import "@fontsource-variable/onest";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "Eg Mechanical",
+  description = "Tu empresa de soluciones mecánicas e ingeniería",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,8 +27,9 @@ import "@fontsource-variable/onest";
       rel="stylesheet"
     />
 
-    <meta name="generator" content={Astro.generator} />
-    <title>Eg Mechanical</title>
+    <!--SEO Basics -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
   </head>
   <body
     class="overflow-x-hidden min-h-screen flex flex-col items-center justify-center relative"
