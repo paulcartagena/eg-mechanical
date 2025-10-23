@@ -12,95 +12,141 @@
 
       <!--Form -->
       <div class="flex-1">
-        <div class="flex-1">
-          <form
-            id="contact"
-            class="flex flex-col justify-center space-y-4"
-            action="https://formsubmit.co/vegalicia1230@icloud.com"
-            method="POST"
-          >  
-            <!--Name -->
-            <div>
-              <label
-                for="first-name"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >First Name</label
-              >
-              <input
-                type="text"
-                id="first-name"
-                name="first-name"
-                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-
-            <!--Lastname -->
-            <div>
-              <label
-                for="last-name"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >Last Name</label
-              >
-              <input
-                type="text"
-                id="last-name"
-                name="last-name"
-                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-
-            <!--Phone -->
-            <div>
-              <label
-                for="phone"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >Phone Number</label
-              >
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-
-            <!--Message -->
-            <div>
-              <label
-                for="message"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-                >Message</label
-              >
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                required></textarea>
-            </div>
-
-            <!--Send Button -->
-            <div class="text-base text-start pt-2">
-              <button
-                type="submit"
-                class="border border-black bg-blue-600 font-semibold md:font-bold text-white rounded-lg px-11 py-3 md:px-16 md:py-4 hover:bg-blue-700 transition duration-300 w-full mx-auto"
-              >
-                Send Message
-              </button>
-            </div>
-
+        <form
+          id="contact-form"
+          class="flex flex-col justify-center space-y-4"
+        >  
+          <!--Name -->
+          <div> 
+            <label
+              for="first-name"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >First Name</label>
             <input
-              type="hidden"
-              name="_next"
-              value="https://egmechanic.com/"
+              type="text"
+              id="first-name"
+              name="first-name"
+              class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
-            <input type="hidden" name="_captcha" value="false" />
-          </form>
-        </div>
+          </div>
+
+          <!--Lastname -->
+          <div>
+            <label
+              for="last-name"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >Last Name</label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          <!--Phone -->
+          <div>
+            <label
+              for="phone"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          <!--Message -->
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="mt-2 block w-full p-3 border border-gray-300 rounded-lg bg-gray-50 opacity-60 text-gray-800 dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              required></textarea>
+          </div>
+
+          <!-- Turnstile Widget -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAB8K5sQ50VbksMZs"></div>
+
+          <!-- Message container for success/error -->
+          <div id="form-message" class="hidden p-4 rounded-lg text-center font-medium"></div>
+
+          <!--Send Button -->
+          <div class="text-base text-start pt-2">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="border border-black bg-blue-600 font-semibold md:font-bold text-white rounded-lg px-11 py-3 md:px-16 md:py-4 hover:bg-blue-700 transition duration-300 w-full mx-auto disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
+
+<!-- Form handling script -->
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const messageContainer = document.getElementById('form-message') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Disable button
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Hide previous messages
+    messageContainer.classList.add('hidden');
+    
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        messageContainer.textContent = data.message;
+        messageContainer.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+        messageContainer.classList.add('bg-green-100', 'text-green-700');
+        form.reset();
+        // Reset Turnstile
+        if ((window as any).turnstile) {
+          (window as any).turnstile.reset();
+        }
+      } else {
+        messageContainer.textContent = data.message;
+        messageContainer.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+        messageContainer.classList.add('bg-red-100', 'text-red-700');
+      }
+    } catch (error) {
+      messageContainer.textContent = 'An error occurred. Please try again.';
+      messageContainer.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+      messageContainer.classList.add('bg-red-100', 'text-red-700');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+</script>
