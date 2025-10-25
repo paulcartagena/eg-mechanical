@@ -12,16 +12,14 @@
 
       <!--Form -->
       <div class="flex-1">
-        <form
-          id="contact-form"
-          class="flex flex-col justify-center space-y-4"
-        >  
+        <form id="contact-form" class="flex flex-col justify-center space-y-4">
           <!--Name -->
-          <div> 
+          <div>
             <label
               for="first-name"
               class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-            >First Name</label>
+              >First Name</label
+            >
             <input
               type="text"
               id="first-name"
@@ -36,7 +34,8 @@
             <label
               for="last-name"
               class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-            >Last Name</label>
+              >Last Name</label
+            >
             <input
               type="text"
               id="last-name"
@@ -51,7 +50,8 @@
             <label
               for="phone"
               class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-            >Phone Number</label>
+              >Phone Number</label
+            >
             <input
               type="tel"
               id="phone"
@@ -66,7 +66,8 @@
             <label
               for="message"
               class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-            >Message</label>
+              >Message</label
+            >
             <textarea
               id="message"
               name="message"
@@ -75,11 +76,46 @@
               required></textarea>
           </div>
 
-          <!-- Turnstile Widget -->
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAB8K5sQ50VbksMZs"></div>
+          <!-- Turnstile Widget con placeholder -->
+          <div class="turnstile-container">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAB8K5sQ50VbksMZs">
+            </div>
+            <div class="turnstile-placeholder">
+              <div
+                class="h-16 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center border border-gray-300 dark:border-gray-600"
+              >
+                <svg
+                  class="animate-spin h-5 w-5 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                <span class="ml-2 text-sm text-gray-500 dark:text-gray-400"
+                  >Verifying security...</span
+                >
+              </div>
+            </div>
+          </div>
 
           <!-- Message container for success/error -->
-          <div id="form-message" class="hidden p-4 rounded-lg text-center font-medium"></div>
+          <div
+            id="form-message"
+            class="hidden p-4 rounded-lg text-center font-medium"
+          >
+          </div>
 
           <!--Send Button -->
           <div class="text-base text-start pt-2">
@@ -98,38 +134,48 @@
 </section>
 
 <!-- Turnstile Script -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+  is:inline></script>
 
 <!-- Form handling script -->
 <script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-  const messageContainer = document.getElementById('form-message') as HTMLDivElement;
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const messageContainer = document.getElementById(
+    "form-message"
+  ) as HTMLDivElement;
 
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
+
     // Disable button
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
+    submitBtn.textContent = "Sending...";
+
     // Hide previous messages
-    messageContainer.classList.add('hidden');
-    
+    messageContainer.classList.add("hidden");
+
     const formData = new FormData(form);
-    
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         body: formData,
       });
-      
+
       const data = await response.json();
-      
+
       if (data.success) {
         messageContainer.textContent = data.message;
-        messageContainer.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-        messageContainer.classList.add('bg-green-100', 'text-green-700');
+        messageContainer.classList.remove(
+          "hidden",
+          "bg-red-100",
+          "text-red-700"
+        );
+        messageContainer.classList.add("bg-green-100", "text-green-700");
         form.reset();
         // Reset Turnstile
         if ((window as any).turnstile) {
@@ -137,16 +183,43 @@
         }
       } else {
         messageContainer.textContent = data.message;
-        messageContainer.classList.remove('hidden', 'bg-green-100', 'text-green-700');
-        messageContainer.classList.add('bg-red-100', 'text-red-700');
+        messageContainer.classList.remove(
+          "hidden",
+          "bg-green-100",
+          "text-green-700"
+        );
+        messageContainer.classList.add("bg-red-100", "text-red-700");
       }
     } catch (error) {
-      messageContainer.textContent = 'An error occurred. Please try again.';
-      messageContainer.classList.remove('hidden', 'bg-green-100', 'text-green-700');
-      messageContainer.classList.add('bg-red-100', 'text-red-700');
+      messageContainer.textContent = "An error occurred. Please try again.";
+      messageContainer.classList.remove(
+        "hidden",
+        "bg-green-100",
+        "text-green-700"
+      );
+      messageContainer.classList.add("bg-red-100", "text-red-700");
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
+      submitBtn.textContent = "Send Message";
     }
   });
 </script>
+
+<style>
+  .turnstile-container {
+    position: relative;
+    min-height: 65px;
+  }
+
+  .turnstile-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  .cf-turnstile:not(:empty) ~ .turnstile-placeholder {
+    display: none;
+  }
+</style>
