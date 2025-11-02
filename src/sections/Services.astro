@@ -20,47 +20,60 @@ import ServiceCard from "../components/ServiceCard.astro";
     <div class="grid mt-10 sm:mt-8 grid-cols-1 md:grid-cols-2 gap-6">
       <ServiceCard
         icon="/icons/hvac.svg"
-        title="HVAC Services"
-        content="Expert solutions to keep your home comfortable year-round, with reliable and efficient climate control."
+        title="Air Conditioning"
+        content="Keep your space cool and comfortable all year long."
         background="bg-black"
         gradient="bg-gradient-to-br from-blue-600 to-green-400"
         pills={[
-          "Boilers",
-          "Heat Pumps",
-          "Split Systems",
+          "AC Repair",
+          "Maintenance",
+          "Installation",
           "Ductless",
-          "Air Conditioning",
-          "Gas Furnace",
-          "& More",
+        ]}
+      />
+      <ServiceCard
+        icon="/icons/heat-pump.svg"
+        title="Heating"
+        content="Stay warm and toasty during those cooler months."
+        background="bg-black"
+        gradient="bg-gradient-to-br from-red-800 to-pink-400"
+        pills={[
+          "Maintenance",
+          "Repairs",
+          "Installation",
+          "Gas or electric furnaces",
+          "Boilers",
+          "Tankless",
+          "Mini splits",
         ]}
       />
       <ServiceCard
         icon="/icons/plumbing-services.svg"
-        title="Plumbing Services"
-        content="Comprehensive plumbing solutions to ensure smooth and efficient water flow in your home."
+        title="Plumbing"
+        content="Expert plumbing solutions for leaks, logs installation."
         background="bg-black"
-        gradient="bg-gradient-to-br from-red-800 to-pink-400"
+        gradient="bg-gradient-to-r from-purple-600 to-pink-400"
         pills={[
-          "Water Heaters",
-          "Drain Clearing",
-          "Leak Repair",
-          "Fixture Replacement",
-          "& More",
+          "Diagnostic",
+          "Repairs",
+          "Leak detection",
+          "Clogs",
+          "Water heaters",
+          "Fixture replacement",
         ]}
       />
       <ServiceCard
-        icon="/icons/diagnostics.svg"
-        title="Diagnostics"
-        content="Quickly pinpoint and resolve issues with cutting-edge diagnostic tools for your systems."
-        background="bg-black"
-        gradient="bg-gradient-to-r from-purple-600 to-pink-400"
-      />
-      <ServiceCard
-        icon="/icons/build.svg"
-        title="Installations"
-        content="Professional installations designed to deliver peak performance and long-lasting reliability."
+        icon="/icons/gas-meter.svg"
+        title="Gas"
+        content="Maintaining your system safe and leak free."
         background="bg-black"
         gradient="bg-gradient-to-br from-orange-600 to-yellow-400"
+        pills={[
+          "Leak detection",
+          "New lines",
+          "Installation",
+          "Repairs",
+        ]}
       />
     </div>
   </div>
