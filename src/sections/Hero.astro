@@ -2,10 +2,18 @@
   id="hero"
   class="relative flex flex-col items-center justify-center h-screen pt-20"
 >
-  <!-- Background image -->
+  <!-- Background image - Full width, positioned lower -->
   <div
-    class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 h-screen w-screen lg:hidden md:hidden sm:hidden"
-    style="background-image: url('/images/bg-hero.jpeg');"
+    class="absolute inset-0 bg-cover bg-no-repeat opacity-40 h-screen"
+    style="
+      background-image: url('/images/bg-hero.jpeg');
+      background-position: center 30%;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    "
   >
   </div>
 
@@ -13,65 +21,64 @@
   <div class="relative z-10 text-center px-4">
     <h1 class="font-bold mx-auto mb-4 opacity-90 leading-tight">
       <span class="block font-semibold text-5xl sm:text-7xl md:text-8xl"
-        >Welcome to</span
-      >
-      <span class="block font-semibold text-5xl sm:text-7xl md:text-8xl"
         >EG Mechanical</span
       >
     </h1>
-    <p class="text-lg md:text-xl opacity-80 max-w-md md:max-w-2xl mx-auto">
-      Dedicated to providing reliable HVAC solutions for residential and
-      commercial needs in Alexandria, Virginia.
+    <p class="text-lg md:text-xl opacity-90 max-w-md md:max-w-2xl mx-auto">
+      Serving your HVAC & Plumbing needs in northern Virginia and the District
+      of Columbia.
+      <div
+        class="flex pt-8 flex-row md:flex-row gap-4 w-fit md:max-w-xl mx-auto"
+      >
+        <a
+          href="tel:+1(571)3957221"
+          class="bg-blue-600 font-semibold text-white rounded-lg px-11 py-3 hover:bg-blue-700 transition duration-300"
+        >
+          Direct Call
+        </a>
+        <a
+          href="sms:+1(571)3957221"
+          class="bg-gray-200 font-semibold text-black rounded-lg px-7 py-3 hover:bg-gray-400 transition duration-300"
+        >
+          Send a Message
+        </a>
+      </div>
     </p>
-    <div class="flex pt-8 flex-row md:flex-row gap-4 w-fit md:max-w-xl mx-auto">
-      <a
-        href="tel:+1(571)3957221"
-        class="bg-blue-600 font-semibold text-white rounded-lg px-11 py-3 hover:bg-blue-700 transition duration-300"
-      >
-        Direct Call
-      </a>
-      <a
-        href="sms:tel:+1(571)3957221"
-        class="bg-gray-200 font-semibold text-black rounded-lg px-7 py-3 hover:bg-gray-400 transition duration-300"
-      >
-        Send a Message
-      </a>
-    </div>
   </div>
+
+  <style>
+    @media (max-width: 640px) {
+      #hero > div:first-child {
+        height: 100vh;
+        width: 100vw;
+      }
+      #hero > div.relative {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        padding: 0 1rem;
+      }
+      #hero h1 {
+        font-size: 2.5rem;
+      }
+      #hero p {
+        font-size: 1rem;
+      }
+      #hero .flex-row {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 372px) {
+      #hero h1 span {
+        font-size: 2.1rem !important;
+      }
+      #hero p,
+      button {
+        font-size: 13px !important;
+      }
+    }
+  </style>
 </section>
-
-<style>
-  @media (max-width: 640px) {
-    #hero > div:first-child {
-      height: 100vh;
-      width: 100vw;
-    }
-    #hero > div.relative {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      padding: 0 1rem;
-    }
-    #hero h1 {
-      font-size: 2.5rem;
-    }
-    #hero p {
-      font-size: 1rem;
-    }
-    #hero .flex-row {
-      flex-direction: column;
-    }
-  }
-
-  @media (max-width: 372px) {
-    #hero h1 span {
-      font-size: 2.1rem !important;
-    }
-    #hero p,
-    button {
-      font-size: 13px !important;
-    }
-  }
-</style>
