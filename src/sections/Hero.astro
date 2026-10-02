@@ -1,3 +1,10 @@
+---
+import { getImage } from "astro:assets";
+import bgHero from "../assets/images/bg-hero.jpeg";
+
+const optimizedHero = await getImage({ src: bgHero, format: "webp", quality: 60 });
+---
+
 <section
   id="hero"
   class="relative flex flex-col items-center justify-center h-screen pt-20"
@@ -5,15 +12,15 @@
   <!-- Background image - Full width, positioned lower -->
   <div
     class="absolute inset-0 bg-cover bg-no-repeat opacity-40 h-screen"
-    style="
-      background-image: url('/images/bg-hero.jpeg');
+    style={`
+      background-image: url('${optimizedHero.src}');
       background-position: center 30%;
       width: 100vw;
       left: 50%;
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-    "
+    `}
   >
   </div>
 

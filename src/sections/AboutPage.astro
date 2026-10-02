@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import victorPhoto from "../assets/images/01-about.jpeg";
+---
+
 <section id="contact" class="flex mt-40">
   <div class="container flex flex-col gap-5 mx-auto px-8">
     <h2 class="text-4xl md:text-5xl font-bold text-center md:text-left">
@@ -70,9 +75,9 @@
 
       <!-- Imagen que ocupa todo el alto -->
       <div class="flex-1 lg:flex-none lg:w-96">
-        <img
-          src="/images/01-about.jpeg"
-          alt="Victor Galicia"
+        <Image
+          src={victorPhoto}
+          alt="Victor Galicia, owner of EG Mechanical"
           class="w-full object-cover object-center rounded-lg shadow-xl"
         />
       </div>
